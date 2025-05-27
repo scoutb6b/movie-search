@@ -1,4 +1,5 @@
 import useSWR from "swr";
+import MovieCard from "./MovieCard";
 
 type Props = {
   keyword: string;
@@ -26,5 +27,11 @@ export default function MovieList({ keyword, release }: Props) {
   if (error) return <p>エラーが発生しました</p>;
   console.log(data);
 
-  return <div></div>;
+  return (
+    <div className="cardGrid">
+      {data.results.map((movie) => (
+        <MovieCard key={movie.id} movie={movie} />
+      ))}
+    </div>
+  );
 }

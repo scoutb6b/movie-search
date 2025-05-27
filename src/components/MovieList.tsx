@@ -9,7 +9,7 @@ type Props = {
 export default function MovieList({ query }: { query: Props }) {
   const { data, error, isLoading } = useFetch(query);
 
-  if (isLoading) return <p>読み込み中...</p>;
+  if (isLoading) return <p className="loading">読み込み中...</p>;
   if (error) return <p>エラーが発生しました</p>;
 
   return (

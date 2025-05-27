@@ -1,4 +1,5 @@
 import "./App.css";
+import MovieList from "./components/MovieList";
 import SearchForm from "./components/SearchForm";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <h1>Search Movie App</h1>
       <SearchForm />
+      <MovieList keyword={""} release={""} />
     </>
   );
 }

@@ -1,11 +1,10 @@
-type Props = {
-  poster_path: string | null;
-  original_title: string;
-  release_date: string;
-  genre_ids: string;
+import type { Movie } from "../_types/Moives";
+
+type MovieProps = {
+  movie: Movie;
 };
 
-export default function MoiveCard({ movie }: Props) {
+export default function MoiveCard({ movie }: MovieProps) {
   return (
     <div className="card">
       <img

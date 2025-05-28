@@ -13,14 +13,14 @@ const fetcher = (url: string) =>
     },
   }).then((res) => res.json());
 
-export const useFetch = ({ keyword, release }: Query) => {
+export const useFetch = ({ keyword, release }: Query, page: number) => {
   const baseUrl = "https://api.themoviedb.org/3";
   const url =
     keyword === ""
-      ? `${baseUrl}/discover/movie?include_adult=false&include_video=false&language=ja&page=1&sort_by=popularity.desc&year=${release}`
+      ? `${baseUrl}/discover/movie?include_adult=false&include_video=false&language=ja&page=${page}&sort_by=popularity.desc&year=${release}`
       : `${baseUrl}/search/movie?query=${encodeURIComponent(
           keyword
-        )}&include_adult=false&language=ja&page=1&primary_release_year=${release}`;
+        )}&include_adult=false&language=ja&page=${page}&primary_release_year=${release}`;
 
   const { data, error, isLoading } = useSWR(url, fetcher);
 

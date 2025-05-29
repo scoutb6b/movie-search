@@ -54,14 +54,27 @@ h1 {
     text-align: left;
     border-radius: 0 0 8px 8px;
     box-shadow: 0px 5px 10px 0px rgba(67, 67, 67, 0.35);
-    > h3 {
-      padding: 0 5px;
-      font-size: 16px;
-    }
-    > p {
-      padding: 0 5px;
-      font-size: 14px;
-      color: gray;
+    .info {
+      padding: 10px 5px;
+      > h3 {
+        font-size: 16px;
+      }
+      > p {
+        font-size: 14px;
+        color: gray;
+      }
+      .genre {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        > span {
+          font-size: 12px;
+          padding: 4px;
+          border-radius: 5px;
+          background: lightblue;
+          color: darkslateblue;
+        }
+      }
     }
   }
 }
